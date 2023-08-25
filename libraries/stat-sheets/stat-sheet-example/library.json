@@ -1,13 +1,13 @@
 {
-  "name": "Example Stat Sheet",
+  "name": "Simple Stat Sheet",
   "version": "1.0.0",
   "website": "www.rptools.net",
   "authors": [
       "RPTools Team"
   ],
   "license": "MIT or AGPLv3+ or Apache-2.0 (pick which you want)",
-  "namespace": "net.rptools.statSheetExample",
-  "description": "An example stat sheet for others to use as a skeleton.",
+  "namespace": "net.rptools.simpleStatSheet",
+  "description": "An simple stat sheet for others to use as a skeleton.",
   "shortDescription": "Stat Sheet Example",
   "allowsUriAccess": true,
   "readMeFile": "metadata/README.md"
