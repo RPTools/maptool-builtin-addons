@@ -1,0 +1,48 @@
+body {
+  position: fixed;
+  padding: 0px;
+  margin: 0px;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+#statSheet {
+  padding: .5rem;
+  border: .5rem solid;
+  border-image: linear-gradient(to right bottom, var(--mt-theme-color-button-start-background), var(--mt-theme-color-button-end-background)) 1;
+  display: flex;
+  flex-direction: row;
+  flex: 2;
+}
+
+.portrait {
+}
+
+.nameDetails {
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+
+.statDetails {
+  padding-left: .5rem;
+}
+
+.gmProperty {
+  color: var(--mt-theme-color-objects-red-status);
+}
+
+.propertyList {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+.tokenName {
+  font-weight: bold;
+  text-align: center;
+}
+
+.tokenGmName {
+  font-weight: bold;
+  color: var(--mt-theme-color-objects-red-status);
+  text-align: center;
+}

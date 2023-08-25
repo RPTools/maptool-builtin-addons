@@ -1,0 +1,53 @@
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="lib://net.rptools.maptool/css/mt-stat-sheet.css?cachelib=false"
+    />
+    <link rel="stylesheet" href="./statsheet.css?cachelib=false" />
+  </head>
+  <body>
+    <div id="statSheet" class="{{statSheetLocation}}">
+      <div class="portrait">
+        {{#if portrait}}
+        <img
+          src="{{portrait}}"
+          width="{{portraitWidth}}"
+          height="{{portraitHeight}}"
+        />
+        {{else if image}}
+        <img
+          src="{{image}}"
+          width="{{portraitWidth}}"
+          height="{{portraitHeight}}"
+        />
+        {{/if}}
+        <div class="nameDetails">
+          <div class="tokenName">{{name}}</div>
+          {{#if gmName}}
+            <div class="tokenGmName">({{gmName}})</div>
+          {{/if}}
+        </div>
+      </div>
+      <div class="statDetails">
+        <ul class="propertyList">
+          {{#each properties}} 
+            {{#if this.gmOnly}}
+              {{#if this.shortName}}
+                <li class="gmProperty">{{this.displayName}}({{this.shortName}}): {{this.value}}</li>
+              {{else}}
+                <li class="gmProperty">{{this.displayName}}: {{this.value}}</li>
+              {{/if}}
+            {{else}}
+              {{#if this.shortName}}
+                <li class="playerProperty">{{this.displayName}}({{this.shortName}}): {{this.value}}</li>
+              {{else}}
+                <li class="playerProperty">{{this.displayName}}: {{this.value}}</li>
+              {{/if}}
+            {{/if}} 
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

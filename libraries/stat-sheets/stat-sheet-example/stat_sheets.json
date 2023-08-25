@@ -1,0 +1,10 @@
+{
+  "statSheets": [
+    { 
+        "name": "Basic",
+        "description": "Basic Stat Sheet",
+        "propertyTypes": [ "Basic" ],
+        "entry": "sheets/stats/basic/index.hbs" 
+    }
+  ]
+}
