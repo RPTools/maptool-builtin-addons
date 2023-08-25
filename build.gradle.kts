@@ -3,6 +3,8 @@ plugins {
     `java-library` 
 }
 
+group = "net.rptools.maptool.addon"
+
 repositories {
     mavenCentral() 
 }
