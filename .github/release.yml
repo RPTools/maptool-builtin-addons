@@ -1,0 +1,29 @@
+changelog:
+  exclude:
+    labels:
+      - repo-admin
+      - ignore-for-release-note
+    authors:
+      - rptools-automation
+  categories:
+    - title: Breaking Changes 💣
+      labels:
+        - breaking-change
+    - title: New Features 🥳
+      labels:
+        - feature
+    - title: Performance Improvements 🏎️	
+      labels:
+        - performance
+    - title: Bug Fixes 🩹		
+      labels:
+        - bug
+    - title: Code Maintenance 🔧 
+      labels:
+        - code-maintenance
+    - title: Dependency Updates
+      labels:
+        - dependencies
+    - title: Other Changes 💬	
+      labels:
+        - "*"
