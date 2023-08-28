@@ -1,0 +1,40 @@
+{
+  "statSheets": [
+    { 
+        "name": "Rev-Eight-Bit",
+        "description": "8-bit",
+        "propertyTypes": [ ],
+        "entry": "sheets/rev.8-bit.hbs" 
+    },{ 
+        "name": "Rev-Metal-done",
+        "description": "Metal",
+        "propertyTypes": [ ],
+        "entry": "sheets/rev.metal.hbs" 
+    },{ 
+        "name": "Rev-Notes-done",
+        "description": "Notes",
+        "propertyTypes": [ ],
+        "entry": "sheets/rev.notes.hbs" 
+    },{ 
+        "name": "Rev-Parchment",
+        "description": "Parchment",
+        "propertyTypes": [ ],
+        "entry": "sheets/rev.parchment.hbs" 
+    },{ 
+        "name": "Rev-Smoked-Glass",
+        "description": "Smoked Glass",
+        "propertyTypes": [ ],
+        "entry": "sheets/rev.glass.hbs" 
+    },{ 
+        "name": "Rev-Trippy",
+        "description": "Trippy",
+        "propertyTypes": [ ],
+        "entry": "sheets/rev.trippy.hbs" 
+    },{ 
+        "name": "Rev-Vanilla-done",
+        "description": "Vanilla",
+        "propertyTypes": [ ],
+        "entry": "sheets/rev.vanilla.hbs" 
+      }
+  ]
+} 

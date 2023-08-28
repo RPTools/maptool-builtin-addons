@@ -1,0 +1,136 @@
+#statSheet.statSheet {
+	background: transparent;
+	max-height: var(--max-height);
+	max-width: var(--max-width);
+	text-transform: uppercase;
+	color: #8f8;
+	overflow: hidden;
+	position: fixed;
+}
+#statSheet.statSheet-topLeft     #statsheet-content{align-items: flex-start; flex-direction: row;}
+#statSheet.statSheet-topRight    #statsheet-content{align-items: flex-start; flex-direction: row-reverse;}
+#statSheet.statSheet-bottomLeft  #statsheet-content{align-items: flex-end; flex-direction: row;}
+#statSheet.statSheet-bottomRight #statsheet-content{align-items: flex-end; flex-direction: row-reverse;}
+#statSheet.statSheet-top         #statsheet-content{align-items: flex-start; flex-direction: row;}
+#statSheet.statSheet-bottom      #statsheet-content{align-items: flex-end; flex-direction: row;}
+#statSheet.statSheet-left        #statsheet-content{align-items: center; flex-direction: row;}
+#statSheet.statSheet-right       #statsheet-content{align-items: center; flex-direction: row-reverse;}
+.statsheet-content {
+	display: flex;
+	font-family: "Lucida Console", monospace;
+	flex-direction: row;
+	gap: var(--unit6);
+	min-width: 0;
+}  
+.panel {
+	background: #444;
+	border-color: #99a #b0b0bb #c0c0ca #aab;
+	border-radius: var(--unit3);
+	border-style: solid;
+	border-width:  var(--unit2);
+	box-shadow:	inset 0 0 var(--unit15) #333;
+  font-size: var(--unit8);
+	font-weight: 300;
+	height: min-content;
+	line-height: var(--unit8);
+	margin: var(--unit2);
+	min-width:0;
+	padding: var(--unit4);
+	position: relative;
+}
+.panel:before {
+	content: " ";
+	position: absolute;
+	z-index: -1;
+	top: var(--unit-3);
+	left: var(--unit-3);
+	right: var(--unit-3);
+	bottom: var(--unit-3);
+	border-width:  var(--unit3);
+	border-style: solid;
+	border-radius: var(--unit4);
+	border-color: #ccc #666 #555 #999;
+	box-shadow:
+	0 0 var(--unit5) var(--unit) #222,
+	0 0 calc(var(--portrait-width) / 6) rgba(220,220,220,0.4);
+}
+.panel > div, .properties, .portrait { 
+	background: #292929;
+	border: 1px inset #444; 
+	border-radius: var(--unit3);
+  color: #8f8;
+}
+.main-panel {
+	display: inline-flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	gap: var(--unit);
+	width: calc(var(--portrait-width) + 2 * var(--unit10));
+}
+.properties-container {
+	max-width: calc(var(--max-width) - var(--portrait-width) + 2 * var(--unit10));
+}
+.portrait-container {
+ 	grid-area: portrait;
+	height: calc(var(--unit8) + var(--portrait-height));
+	width:  calc(var(--unit8) + var(--portrait-width));
+}
+.portrait {
+	background-color: hsl(100,50%,20%);
+	box-shadow:
+		inset 0 0 var(--unit4) var(--unit) #000,
+		inset 0 0 var(--unit12) var(--unit2) #000,
+		inset 0 0 calc(var(--portrait-height) / 12 ) #4f4;
+	box-sizing: content-box;
+  filter:   sepia(1) hue-rotate(40deg); 
+	position: relative;
+	left: 50%;
+	padding: var(--unit4);
+	top: 50%;
+	transform: translate(-50%, -50%); 
+}
+.token-name, .token-type{
+	height: var(--unit12);
+	width: calc(var(--unit8) + var(--portrait-width)) ;
+	overflow: hidden;
+  padding: var(--unit2) var(--unit5);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.npc .token-type { color: var(--mt-theme-color-objects-yellow); }
+.properties {
+	display: table;
+	overflow: hidden;
+	padding: var(--unit5);
+	width: calc(100% - var(--unit15) - var(--unit8));
+  width: 100%;
+}
+.property-container { display: table-row; overflow: hidden; }
+.property-container div {
+	display: table-cell;
+	overflow: hidden;
+}
+.property-label {
+  border-right: 1px solid red;
+  max-width: clamp(var(--unit10), 11vw, calc(var(--unit5) * 12));
+  min-width: var(--unit10);
+  padding-right: var(--unit3);
+  text-align: right;
+	text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.property-value-container {
+  max-height: calc( var(--mt-theme-font-size) * 3.5);
+  max-width: calc(var(--max-width) - var(--portrait-width) - 3 * var(--unit15) - var(--unit5) * 13);
+  min-width: var(--unit10);
+}
+.property-value {
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+  padding-left: var(--unit3);
+  text-align: left;
+  white-space: normal;
+}
+.gm-only {color: var(--mt-theme-color-objects-yellow);}

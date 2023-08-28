@@ -1,0 +1,237 @@
+:root {
+  --gradientbg: linear-gradient(to bottom,
+  		var(--mt-theme-color-button-start-background),
+  		var(--mt-theme-color-button-pressed-background));
+  --boxshadow: 
+  		inset 0 0 var(--unit) var(--mt-theme-color-background),
+  	 	0 0 var(--unit2) rgba(0, 0, 0, 1.00); 
+	--boxshadow-2: 
+  		inset var(--unit) var(--unit) var(--unit2) var(--mt-theme-color-background),
+  	 	inset var(--unit-1) var(--unit-1) var(--unit2) rgba(0, 0, 0, 0.42),
+  	 	0 0 var(--unit2) rgba(0, 0, 0, 1.00); 
+	--grid-template-top-right: "table type" "table portrait" "table name";
+  --grid-template-top-left: "type table" "portrait table" "name table";
+  --grid-template-bottom-left: "name table" "portrait table" "type table";
+  --grid-template-bottom-right: "table name" "table portrait" "table type";
+}
+
+#statsheet { 
+  display: grid;
+  gap: 0;
+  grid-template-areas: "rivet0 content rivet1" "rivet2 content rivet3";
+  background: #ddd;
+	box-shadow: 
+		-4px -4px 3px rgb(202,202,182), 
+		4px 4px 3px rgb(178,178,178), 
+		-4px 4px 3px rgb(202,202,192), 
+		4px -4px 3px rgb(178,178,178),
+		var(--unit3) var(--unit3) var(--unit8) rgba(0,0,0,0.4);
+	border-bottom: 3px solid rgb(196,196,200);
+	border-left: 3px solid rgb(182,182,182);
+	border-right: 3px solid rgb(192,192,182);
+	border-top: 3px solid rgb(178,178,178);
+	border-radius:0.5rem;
+	color: transparent;
+	margin: var(--unit5);
+	max-height: var(--max-height);
+	max-width: var(--max-width);
+	overflow: hidden;
+}
+.statsheet::before {
+	background-image: linear-gradient(12deg,
+		rgba(255,255,255,0) 0%,
+		rgba(255,255,255,.3) 10%,
+		rgba(255,255,255,0) 20%,
+		rgba(255,255,255,.3) 30%,
+		rgba(255,255,255,.2) 40%,
+		rgba(255,255,255,.15) 48%,
+		rgba(0,0,0,.1) 50%,
+		rgba(255,255,255,0) 60%,
+		rgba(255,255,255,.3) 70%,
+		rgba(255,255,255,0) 80%,
+		rgba(255,255,255,.3) 90%,
+		rgba(255,255,255,0) 100%);
+	content: " ";
+	position: absolute;
+	z-index: -1;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	border: 3px inset silver;
+	border: 3px inset rgb(192,192,192);
+	border-radius:0.4em;
+}
+.statsheet::after {	
+	content: " ";
+	position: absolute;
+	z-index: -1;
+	top: 4px;
+	left: 4px;
+	right: 4px;
+	bottom: 4px;
+	border-bottom: 3px solid rgb(168,168,178);
+	border-left:   3px solid rgb(202,202,192);
+	border-right:  3px solid rgb(100,100,118);
+	border-top:    3px solid rgb(202,202,192);
+	border-radius:0.2em;
+}
+.statsheet.statsheet-topLeft #statsheet-content{ 
+	grid-template-areas: var(--grid-template-top-left);
+	padding: var(--unit2) var(--unit2) 0 0;
+}
+.statsheet.statsheet-topRight #statsheet-content{
+	grid-template-areas: var(--grid-template-top-right);
+	padding: var(--unit2) 0 0 var(--unit2);
+}
+#statsheet.statsheet-bottomLeft  #statsheet-content{
+	grid-template-areas: var(--grid-template-bottom-left);
+	padding: var(--unit2) var(--unit2) 0 0;
+	align-items: end;
+}
+.statsheet.statsheet-bottomRight #statsheet-content{
+	grid-template-areas: var(--grid-template-bottom-right);
+	padding: var(--unit2) 0 0 var(--unit2);
+}
+.statsheet.statsheet-top  #statsheet-content{
+	grid-template-areas: var(--grid-template-top-left);
+	padding: var(--unit2) var(--unit2) 0 0;
+}
+.statsheet.statsheet-bottom  #statsheet-content{
+	grid-template-areas: var(--grid-template-bottom-left);
+	padding: var(--unit2) var(--unit2) 0 0;
+}
+.statsheet.statsheet-left  #statsheet-content {
+	grid-template-areas: var(--grid-template-bottom-left);
+	padding: var(--unit2) var(--unit2) 0 0;
+}
+.statsheet.statsheet-right  #statsheet-content {
+	grid-template-areas: var(--grid-template-bottom-right);
+	padding: var(--unit2) 0 0 var(--unit2);
+}
+.statsheet-content {
+	display: inline-grid;
+	grid-gap: var(--unit5);
+	align-items: end;	
+}
+.statsheet-content div {
+	background-clip: text;
+	font-family:Helvetica;
+	font-size: 1.4rem;
+	line-height: 1.21;
+	margin: 0 auto;
+	position: relative;
+	overflow: hidden;
+	text-shadow: 
+		-1px -1px #778, 
+		-1px 0 #666;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	z-index: 1;	
+}
+.portrait-container {
+	border: 1px solid #888;
+	box-sizing: content-box;
+	box-shadow: 0 0 3px 2px rgba(0,0,0,0),
+		var(--boxshadow),
+		inset var(--unit) var(--unit) var(--unit) 1px #fff,
+		inset var(--unit-1) var(--unit-1) var(--unit) 1px rgba(0,0,0,0.14);
+	display: inline-table;
+ 	grid-area: portrait; 
+	margin-bottom: var(--unit8);
+	margin-left: var(--unit4);
+	overflow: hidden;
+	padding: var(--unit4);
+	height: min-content;
+	justify-self: bottom;
+	width: max-content;
+}
+.portrait { 	
+  padding: var(--unit);
+  box-sizing: content-box;
+  filter: grayscale(1) invert(0.2) opacity(0.8) drop-shadow(1px 1px 3px white);
+  display: table-cell;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.name-container { grid-area: name; }
+#token-name { 
+	font-size: var(--unit9);
+	line-height: 1.1;
+	margin-top: var(--unit3);
+	overflow: hidden;
+	text-overflow: ellipsis;
+	text-shadow: 
+		-1px -1px #888, 
+		-1px 0 #777, 
+		-1px -1px 2px rgb(255, 255, 0);
+	vertical-align: bottom;
+	white-space: nowrap;
+	width: calc(var(--unit10) + (var(--portrait-width))) ;
+}
+.token-type { grid-area: type; }
+.properties-container { 
+  grid-area: table;
+  max-width: calc(var(--max-width) - var(--portrait-width) + 2 * var(--unit10));
+  overflow: hidden;
+}
+.properties { 
+	border-radius: var(--unit4);	
+	display: table; 
+	height: min-content;
+	padding: var(--unit5) var(--unit4);
+	position: relative;
+}
+.properties:after { 
+	content: "";
+	bottom:0; left:0; right:0; top:0;
+	border-weight: 2px;
+	border-style: solid;
+	border-color: #ddd #aaa #999 #ccc;
+	border-radius: var(--unit4);
+	box-shadow: inset 2px 2px 5px #eee, -2px -2px 5px #eef, 2px 2px 2px #dde;
+	position: absolute;
+}
+
+.property-container { 
+  display: table-row;
+  overflow: hidden;
+  min-width: 0;
+  width: 100%;
+}
+.property-container:not(:last-child) div { border-bottom: 1px dotted #999; }
+.property-container div {
+  display: table-cell;  
+  min-width: var(--unit15);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.property-label {
+  border-right: 1px solid red;
+  padding-right: var(--unit2);
+  text-align: right;
+}
+.property-value {
+  padding-left: var(--unit2);
+  text-align: left;
+}
+.gm-only div {
+color: var(--mt-theme-color-objects-red-status);
+	text-shadow: 
+		-1px -1px #777, 
+		-1px 0 #555;
+	}
+.rivet {
+	background: silver;
+	border-radius: var(--unit4);
+	height: var(--unit8);
+	opacity: 0.4;
+	width: var(--unit8);
+}
+
+#rivet0 { grid-area: rivet0; }
+#rivet1 { grid-area: rivet1; }
+#rivet2 { grid-area: rivet2; }
+#rivet3 { grid-area: rivet3; }

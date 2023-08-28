@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, height=device-height, user-scalable=0, initial-scale=1" />
+<link rel="stylesheet" href="lib://net.rptools.maptool/css/mt-stat-sheet.css" />
+<link rel="stylesheet" href="./css/normalise.css" />
+<link rel="stylesheet" href="./css/rev.statsheet.css" />
+<link rel="stylesheet" href="./css/rev.notes.css" />
+<style>
+:root {
+  --portrait-width:{{portraitWidth}}px;
+  --portrait-height:{{portraitHeight}}px;
+}
+</style>
+</head>
+<body>
+<div id="statsheet" class="statsheet {{statSheetLocation}} {{#if gm}}gm{{else}}player{{/if}} {{tokenType}}">
+  <div id="first-pane" class="first-pane">
+  <div id="portrait-container" class="portrait-container">
+    <img id="portrait" class="portrait" 
+         src="{{~#if portrait}}{{~portrait~}}
+              {{~else if handout}}{{~handout~}}
+              {{~else if image}}{{~image~}}{{~/if}}"
+         width="{{portraitWidth}}"
+         height="{{portraitHeight}}"
+    />
+  </div>
+  <div id="token-names-container" class="token-names-container">
+    <div class="token-name-container name-container">
+      <div class="name-container-label">Name:</div>
+      <div class="name-container-value">{{name}}</div>
+    </div>  
+    {{~#if gmName}}
+    <div class="gm-name-container name-container gm-only">
+      <div class="name-container-label">GM:</div>
+      <div class="name-container-value">{{gmName}}</div>
+    </div>  
+    {{~/if}}      
+  </div>
+  </div>
+  
+  {{~#if notes}}
+    <div id="notes" class="notes notes-pane">
+      <div class="notes-content">
+      <div class="notes-label">Notes</div>
+      {{{notes}}}
+      </div>
+    </div>
+  {{~/if}}
+  {{~#if gmNotes}}
+    <div id="notes-gm" class="notes-gm notes-pane gm-only">
+      <div class="notes-content">
+      <div class="notes-label">GM Notes</div>
+      {{{gmNotes}}}
+      </div>
+    </div>
+  {{~/if}}
+</div>
+</body>
+</html>
