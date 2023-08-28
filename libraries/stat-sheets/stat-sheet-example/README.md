@@ -29,7 +29,7 @@ The stat sheets are defined in a file called stat_sheets.json, for example
 ```
 The propertyTypes field lets MapTool know which property types are allowed to have this stat sheet, if it is an empty array then ALL property types can use this stat sheet. In general if you are planning to distribute your stat sheets outside of a specific framework where you also dictate the name of property types you should not provide any property types here.
 
-The entry field lets MapTool know where in your add on to find the html file that defines the stat sheet. The html stat sheet is actually a handlebars template (more details can be found further below)
+The entry field lets MapTool know where in your add-on to find the html file that defines the stat sheet. The html stat sheet is actually a handlebars template (more details can be found further below)
 
 As the statSheets field is an array you can define multiple stat sheets in the same Add-on.
 
