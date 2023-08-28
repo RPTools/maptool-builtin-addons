@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, height=device-height, user-scalable=0, initial-scale=1" />
+<link rel="stylesheet" href="lib://net.rptools.maptool/css/mt-stat-sheet.css" />
+<link rel="stylesheet" href="./css/normalise.css" />
+<link rel="stylesheet" href="./css/rev.statsheet.css" />
+<link rel="stylesheet" href="./css/rev.metal.css" />
+<style>
+:root {
+  --portrait-width:{{portraitWidth}}px;
+  --portrait-height:{{portraitHeight}}px;
+}
+</style>
+</head>
+<body>
+<div id="statsheet" class="statsheet {{statSheetLocation}} {{#if gm}}gm{{else}}player{{/if}} {{tokenType}}">
+  <img id="rivet0" class="rivet" alt="rivet" src="./images/rivet.png" />
+  <img id="rivet1" class="rivet" alt="rivet" src="./images/rivet.png" />
+  <img id="rivet2" class="rivet" alt="rivet" src="./images/rivet.png" />
+  <img id="rivet3" class="rivet" alt="rivet" src="./images/rivet.png" />
+  <div id="statsheet-content" class="statsheet-content">
+    <div id="portrait-container" class="portrait-container">
+      <img id="portrait" class="portrait" 
+        src="{{~#if portrait}}{{~portrait~}}
+            {{~else if handout}}{{~handout~}}
+            {{~else if image}}{{~image~}}{{~/if}}"
+        width="{{portraitWidth}}"
+        height="{{portraitHeight}}"
+      />
+    </div> 
+    <div id="name-container" class="name-container">
+      <div id="token-name" class="token-name">{{name}}</div>
+    </div>  
+    <div id="token-type" class="token-type">{{tokenType}}</div>
+    {{#if properties~}}
+    <div id="properties-container" class="properties-container">
+      <div id="properties" class="properties">
+      {{#each properties~}}
+        <div class="property-container property-{{~slugify this.displayName}} {{#if this.gmOnly}}gm-only{{/if}}">
+          <div class="property-label">
+            {{~#if this.shortName}}
+              {{~this.shortName~}}
+            {{~else}}
+              {{~this.displayName~}}
+            {{~/if}}
+          </div>
+          <div class="property-value-container">
+          <div class="property-value">
+            {{~this.value~}}
+          </div>
+          </div>
+        </div>
+      {{~/each}}    
+      </div>
+    </div>
+    {{~/if}}
+  </div>
+</div>
+</body>
+</html>

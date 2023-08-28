@@ -1,68 +1,68 @@
-## Simple example MapTool Stat Sheet Add-On
-This repository contains a really simple example of how to create a MapTool Stat Sheet.
+## Simple example MapTool Stat-Sheet Add-On
+This repository contains a really simple example of how to create a MapTool Stat-sheet.
 
 ### Add-On
-Stat Sheet are added to MapTool via an Add-On which have the following structure at minimum:
+Stat-sheets are added to MapTool via an Add-On which have the following structure at minimum:
 
 ```
 library.json    <-- File that provides the Add-On details
 library/        <-- Directory that contains the Add-On contents  
-stat_sheet.json <-- File that defines the stat sheets
+stat_sheet.json <-- File that defines the stat-sheets
 ```
 
 More details about general Add-Ons can be found at https://docs.rptools.info/docs/add-ons/
 
 
-### Defining the Stat Sheet
-The stat sheets are defined in a file called stat_sheets.json, for example
+### Defining the Stat-Sheet
+The stat-sheets are defined in a file called stat_sheets.json, for example
 ```json
 {
   "statSheets": [
     { 
         "name": "Basic",
-        "description": "Basic Stat Sheet",
+        "description": "Basic Stat-Sheet",
         "propertyTypes": [ "Basic" ],
         "entry": "sheets/stats/basic/index.hbs" 
     }
   ]
 }
 ```
-The propertyTypes field lets MapTool know which property types are allowed to have this stat sheet, if it is an empty array then ALL property types can use this stat sheet. In general if you are planning to distribute your stat sheets outside of a specific framework where you also dictate the name of property types you should not provide any property types here.
+The propertyTypes field lets MapTool know which property types are allowed to have this stat-sheet, if it is an empty array then ALL property types can use this stat-sheet. In general if you are planning to distribute your stat-sheets outside of a specific framework where you also dictate the name of property types you should not provide any property types here.
 
-The entry field lets MapTool know where in your add-on to find the html file that defines the stat sheet. The html stat sheet is actually a handlebars template (more details can be found further below)
+The entry field lets MapTool know where in your add-on to find the html file that defines the stat-sheet. The html stat-sheet is actually a handlebars template (more details can be found further below)
 
-As the statSheets field is an array you can define multiple stat sheets in the same Add-on.
+As the statSheets field is an array you can define multiple stat-sheets in the same Add-on.
 
 ### Creating a Stat Sheet with a handlebars template
-Handlebars template are used to create the html which is displayed as the stat sheet. For more information about handlebars templates see https://handlebarsjs.com/guide
+Handlebars template are used to create the html which is displayed as the stat-sheet. For more information about handlebars templates see https://handlebarsjs.com/guide
 
 #### Creating the Stat Sheet
-Stat Sheets must include the stat sheet CSS 
+Stat Sheets must include the stat-sheet CSS 
 ```html
     <link
       rel="stylesheet"
       href="lib://net.rptools.maptool/css/mt-stat-sheet.css?cachelib=false"
     />
 ```
-The content of the stat sheet must also be in a container element with the id of `statSheet` which also has the class `statstatSheetLocation` (it can have other classes as well), for example
+The content of the stat-sheet must also be in a container element with the id of `statSheet` which also has the class `statstatSheetLocation` (it can have other classes as well), for example
 ```handlebars
 <div id="statSheet" class="{{statSheetLocation}}">
   <!-- Stat Sheet Contents go here -->
 </div>
 ```
 
-Doing the above two things will allow MapTool to correctly size and position your stat sheet as well as set the colours, fonts, etc to match the current theme. If you are going for a custom look you can override the colours, fonts, etc but you should respect the positioning as that is where the user wanted the stat sheet to be positioned.
+Doing the above two things will allow MapTool to correctly size and position your stat-sheet as well as set the colours, fonts, etc to match the current theme. If you are going for a custom look you can override the colours, fonts, etc but you should respect the positioning as that is where the user wanted the stat-sheet to be positioned.
 
 
 
 #### Values that MapTool will define for the template to use
-The following values will define for the handlebars template to use when creating the stat sheet.
+The following values will define for the handlebars template to use when creating the stat-sheet.
 - name - the name of the Token
 - gmName - The GM name of the Token (only if player is GM)
 - label - The label of the Token
 - portraitWidth - The width of the portrait, e.g. 175px. This value is derived by the preference settings of the user so should be respected.
 - portraitHeight - The height of the portrait, e.g. 150px. This value is derived by the preference settings of the user so should be respected.
-- statSheetLocation - The location of the stat sheet, this is the class that must be added to the container. It can also be used to make your stat sheet react to its position, valid values are
+- statSheetLocation - The location of the stat-sheet, this is the class that must be added to the container. It can also be used to make your stat-sheet react to its position, valid values are
   - statSheet-topLeft
   - statSheet-top
   - statSheet-topRight
@@ -82,7 +82,7 @@ The following values will define for the handlebars template to use when creatin
   - value - The value of the property
   - gmOnly - true if property is marked as gm only in property dialog.
 
-Note: The propertyList respects the settings of the user in the campaign settings. Only the values that are checked as appearing on the stat sheet will be in this list, and only if they meet the requirements such as owner or GM. This allows the user to still define what they want on the stat sheet. A handlebars template like the following can be used to display the dynamic properties list (although this is by no means the only way to do so).
+Note: The propertyList respects the settings of the user in the campaign settings. Only the values that are checked as appearing on the stat-sheet will be in this list, and only if they meet the requirements such as owner or GM. This allows the user to still define what they want on the stat-sheet. A handlebars template like the following can be used to display the dynamic properties list (although this is by no means the only way to do so).
 ```handlebars
 <ul class="propertyList">
   {{#each properties}} 
@@ -104,7 +104,7 @@ Note: The propertyList respects the settings of the user in the campaign setting
 ```
 
 #### CSS Variables
-Including the stat sheet CSS will make the following variables available to your CSS (assuming you include the MapTool stat sheet CSS before yours).
+Including the stat-sheet CSS will make the following variables available to your CSS (assuming you include the MapTool stat-sheet CSS before yours).
 ```css
   --mt-theme-color-actions-blue: ...;
   --mt-theme-color-actions-blue-dark: ...;

@@ -1,0 +1,162 @@
+html {
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  margin: 0;
+}
+a {
+  background-color: transparent; 
+  -webkit-text-decoration-skip: objects; 
+}
+abbr[title] {
+  border-bottom: none; 
+  text-decoration: underline;
+  text-decoration: underline dotted;
+}
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+article,
+aside,
+footer,
+header,
+nav,
+section {
+  display: block;
+}
+b,
+strong {
+  font-weight: bolder;
+}
+canvas {
+  display: inline-block;
+}
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+details, 
+menu {
+  display: block;
+}
+dfn {
+  font-style: italic;
+}
+dl dl,
+dl ol,
+dl ul,
+ol dl,
+ul dl {
+  margin: 0;
+}
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0.35em 0.75em 0.625em;
+}
+figure {
+  margin: 1em 40px;
+}
+figcaption,
+figure,
+main { 
+  display: block;
+}
+[hidden] {
+  display: none;
+}
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+img {
+  border-style: none;
+}
+legend {
+  box-sizing: border-box; 
+  color: inherit; 
+  display: table; 
+  max-width: 100%; 
+  padding: 0; 
+  white-space: normal; 
+}
+mark {
+  background-color: #ff0;
+  color: #000;
+}
+pre {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+progress {
+  display: inline-block; 
+  vertical-align: baseline; 
+}
+small {
+  font-size: 80%;
+}
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sub {
+  bottom: -0.25em;
+}
+sup {
+  top: -0.5em;
+}
+summary {
+  display: list-item;
+}
+svg:not(:root) {
+  overflow: hidden;
+}
+table {
+  border-color: inherit;
+  text-indent: 0;
+}
+template {
+  display: none;
+}
+.hidden {
+    display: none !important;
+}
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    -webkit-clip-path: inset(50%);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    white-space: nowrap; 
+}
+.invisible {
+    visibility: hidden;
+}
+.clearfix:before,
+.clearfix:after {
+    content: " "; 
+    display: table; 
+}
+.clearfix:after {
+    clear: both;
+}
