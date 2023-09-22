@@ -1,6 +1,6 @@
-
 plugins {
     `java-library` 
+    `maven-publish`
 }
 
 group = "net.rptools.maptool.addon"
@@ -57,3 +57,19 @@ libDirs.forEach{dir: File ->
     archiveFileName.set("${lib}.mtlib")
   }
 }
+
+afterEvaluate {
+  publishing {
+    publications {
+      create<MavenPublication>("maptool-builtin-addons") {
+        from(components["java"])
+        //artifact("./build/libs/maptool-builtin-addons.jar")
+        pom {
+          groupId = "net.rptools.maptool.addon"
+          artifactId = "maptool-builtin-addons"
+        }
+      }
+    }
+  }
+}
+
