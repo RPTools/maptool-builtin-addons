@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, height=device-height, user-scalable=0, initial-scale=1" />
+<link rel="stylesheet" href="lib://net.rptools.maptool/css/mt-stat-sheet.css" />
+<link rel="stylesheet" href="./css/rev.statsheet.css" />
+<link rel="stylesheet" href="./css/rev.vanilla.css" />
+<style>
+:root {
+  --portrait-width:{{portraitWidth}}px;
+  --portrait-height:{{portraitHeight}}px;
+}
+</style>
+</head>
+<body>
+<div id="statSheet" class="{{statSheetLocation}} {{#if gm}}gm{{else}}player{{/if}} {{tokenType}}">
+  <div id="portrait-container" class="portrait-container">
+    <img id="portrait" class="portrait" 
+         src="{{~#if portrait}}{{~portrait~}}
+              {{~else if handout}}{{~handout~}}
+              {{~else if image}}{{~image~}}{{~/if}}"
+         width="{{portraitWidth}}"
+         height="{{portraitHeight}}"
+    />
+  </div>
+  <div id="token-names" class="token-names">
+    <div id="name" class="name">{{name}}</div>
+    {{~#if gmName}}
+    <div id="name-gm" class="name-gm gm-only">{{gmName}}</div>
+    {{~/if}}
+  </div>  
+  <div id="token-type" class="token-type">{{tokenType}}</div>
+  {{#if properties~}}
+        <div id="properties-container" class="properties-container">
+          <div id="properties" class="properties">
+          {{#each properties~}}
+            <div class="property-container property-{{~slugify this.displayName}} {{#if this.gmOnly}}gm-only{{/if}}">
+              <div class="property-label">
+                {{~#if this.shortName}}
+                  {{~this.shortName~}}
+                {{~else}}
+                  {{~this.displayName~}}
+                {{~/if}}
+              </div>
+              <div class="property-value-container">
+              <div class="property-value">
+                {{~this.value~}}
+              </div>
+              </div>
+            </div>
+          {{~/each}}    
+          </div>
+        </div>
+        {{~/if}}
+        
+</div>
+</body>
+</html>

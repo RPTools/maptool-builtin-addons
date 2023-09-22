@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, height=device-height, user-scalable=0, initial-scale=1" />
+<link rel="stylesheet" href="lib://net.rptools.maptool/css/mt-stat-sheet.css" />
+<link rel="stylesheet" href="./css/normalise.css" />
+<link rel="stylesheet" href="./css/rev.statsheet.css" />
+<link rel="stylesheet" href="./css/rev.parchment.css" />
+<style>
+:root {
+  --portrait-width:{{portraitWidth}}px;
+  --portrait-height:{{portraitHeight}}px;
+}
+</style>
+
+</head>
+<body>
+<div id="statsheet" class="{{statSheetLocation}} statsheet {{#if gm}}gm{{else}}player{{/if}} {{tokenType}}">
+  <div class="token-name" id="token-name">{{name}}</div>
+    <svg id="portrait-frame" class="portrait-frame" 
+        viewBox="0 0 500 500" preserveAspectRatio="xMidYMid" 
+        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" >
+  <defs>
+    <linearGradient id="linearGradient9528" x1="87" x2="413" y1="250" y2="250" gradientUnits="userSpaceOnUse">
+      <stop offset="0"/>
+      <stop style="stop-opacity:0" offset=".2"/>
+      <stop style="stop-opacity:0" offset=".8"/>
+      <stop offset="1"/>
+    </linearGradient>
+    <linearGradient id="linearGradient9542" x1="87" x2="413" y1="250" y2="250" gradientUnits="userSpaceOnUse">
+      <stop offset="0"/>
+      <stop style="stop-color:#fff" offset=".2"/>
+      <stop style="stop-color:#fff" offset=".8"/>
+      <stop offset="1"/>
+    </linearGradient>
+    <mask id="img-mask" maskUnits="userSpaceOnUse">
+      <g>
+        <rect id="innerRect" x="92" y="92" rx="32" ry="32" width="316" height="316" />
+        <use style="fill:url(#linearGradient9542)" xlink:href="#innerRect"/>
+        <use transform="matrix(0 1 -1 0 500 0)" style="fill:url(#linearGradient9528)" xlink:href="#innerRect"/>
+      </g>
+    </mask>
+    <filter id="line-art" x="-.071" y="-.071" width="1.1" height="1.1" color-interpolation-filters="sRGB">
+      <feColorMatrix in="SourceGraphic" result="inverted" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
+      <feGaussianBlur id="gaussianBlur" in="inverted" result="inverted-blurred" stdDeviation="10"/>
+      <feBlend in="SourceGraphic" in2="inverted-blurred" mode="color-dodge" result="colorDodge"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feConvolveMatrix order="3" kernelMatrix="-1 -1 -1 -1 8.5 -1 -1 -1 -1"/>
+    </filter>
+    <clipPath id="clipPath1629">
+      <rect x="92" y="92" rx="32" ry="32" width="316" height="316" />
+    </clipPath>
+  </defs>
+  <image id="portrait" x="82" y="82" width="336" height="336" 
+     mask="url(#img-mask)"
+     clip-path="url(#clipPath1629)"
+     preserveAspectRatio="xMidYMid slice" 
+     xlink:href="{{~#if portrait}}{{~portrait~}}
+        {{~else if handout}}{{~handout~}}
+        {{~else if image}}{{~image~}}{{~/if}}" 
+     style="filter:url(#line-art);"
+  />
+  <rect class="border" x="84" y="84" rx="40" ry="40" width="332" height="332" fill="none" stroke-width="1"></rect>
+  <rect class="border" x="88" y="88" rx="36" ry="36" width="324" height="324" fill="none" stroke-width="1"></rect>
+  <g id="flourish">
+  <path d="m112 57c-8.1 1.2-16 5.5-19 11-7.4 11-2.5 26 9.4 28 5.5 1.2 13-.27 14-2.5.12-.35.04-.94-.19-1.4-.59-1.1-2.7-.86-3.3.35-.55 1.2-1.6 1.4-6.8 1.4-4.4 0-4.6-.039-7-1.3-6.6-3.6-8.8-11-5.2-19 3.8-7.6 16-12 30-12l4.7.24.47-2.6c.24-1.4.35-2.7.24-2.8-.75-.74-13-1-18-.39z" style="stroke-width:.1"/>
+  <path d="m372 57c-1.1.16-2.1.39-2.2.51-.12.078 0 1.4.24 2.8l.46 2.6 4.7-.24c11-.55 22 2.5 27 7.7 3.7 3.7 5.5 8.6 4.6 13-.86 4.5-3 7.5-6.7 9.5-2 1.1-3 1.3-5.5 1.5-3.8.23-7.2-.2-7.8-.94-1.2-1.5-1.6-1.7-2.4-1.7-1.1 0-1.9 1.2-1.5 2.1.86 2.3 8.8 3.7 14 2.5 5.9-1.3 11-5.9 12-12 .24-.94.43-3.2.43-5.1-.04-8.2-4.6-15-13-19-5.6-2.8-8.7-3.4-17-3.6-3.8-.078-7.7 0-8.9.12z" style="stroke-width:.1"/>
+  <path d="m240 14c-2.4.49-2.7 4.1-3.8 6.3-.23.45-.39 1.3-.59 1.4-.16.12-1.1-.31-2-.98-4.8-3.2-12-5.2-19-5.2-5.6 0-8.8.7-14 3.1-3.1 1.5-4.2 2.3-7 5.2-5.5 5.5-7.6 11-7.3 18 .19 5.1 1.2 8.4 3.8 12l1.9 2.8-1.4 1c-.78.55-2.6 1.8-4 2.9l-2.6 1.8-5-3.5c-13-9.1-21-12-29-12-9.5 0-17 4.5-19 12-1.2 3.5-.98 8.6.47 12 2 4.4 6.4 8 12 9.9 4.1 1.4 9.8 1.5 14 .23 1.7-.51 3.5-1.1 4.1-1.4l.98-.51-1.1-.7c-1-.66-1.1-.66-3.9.16-3.5 1.1-9.2 1.5-12 .82-5.4-1.2-9.6-4.5-12-9.3-1.1-2.4-1.2-3-1.2-6.6 0-3.4.12-4.1.98-5.8 2-3.9 5.3-5.8 11-6.1 6.2-.31 12 1.2 20 5.4 4 2 12 6.6 14 8.6l.86.7-5.2 3.3c-7.5 4.8-6.9 4.3-5.7 5.1 1 .66 1 .66 4.9-1.7 2.1-1.3 4.6-3 5.7-3.7 1-.74 2-1.3 2.2-1.3.24 0 2 1.1 4 2.4 2 1.3 5.6 3.3 7.9 4.5 7.8 3.7 14 5.4 21 5.4 8 .039 14-2.1 19-7.1 4-3.9 5.2-6.4 5.4-11 .19-4.1-.51-7.2-2.7-12-2.4-5-7.2-9.1-10-9.1-2 0-2.7 1.7-1.2 3.2.7.7 1.1.78 2.5.55 1.7-.23 1.8-.2 3.8 1.8 5.3 5.3 7.2 14 4.5 20-2.8 6-8.8 9.3-17 9.3-6.4 0-12-1.6-20-5.2-3.6-1.8-11-6.3-11-6.7 0-.12 1.7-1.4 3.7-2.8l3.7-2.6 2.4 2c7.9 6.6 18 7.1 22 1.2 2-2.9 1.8-7.2-.43-9.9-3.8-4.5-12-3.9-21 1.5-1.4.9-2.8 1.6-2.9 1.6-.58 0-2-2.9-2.7-5.5-.82-3-.93-11-.19-13 3.2-11 14-18 28-17 4.6.27 7 .9 11 2.6 4.6 2.2 4.5 1.8 4.6 8.5.12 6.1.63 8.4 2.8 13 2.5 4.8 5.9 6.7 8.8 4.6 2.6-1.9 2.6-6.2.04-12-1.6-3.2-6.4-10-8.2-12-.7-.66-.51-1.7-.27-2.5.49-1.7 1.6-3.9 3.3-4.1 3.9-.39 8.1 7.5 9 7.5s4.8-8.1 8.8-7.8c1.9.15 3 2.6 3.6 4.4.24.82.43 1.9-.28 2.5-1.8 1.6-6.6 8.5-8.2 12-2.6 5.3-2.6 9.6.04 12 5.5 3.9 12-6.4 12-19-.08-4.3-.08-4.4.94-5.2 1.4-1.1 5.7-3.1 8.2-3.8 1.1-.31 3.9-.66 6.1-.82 14-.82 25 6.3 28 18 .74 3 .62 9.8-.2 13-.7 2.6-2.1 5.5-2.6 5.5-.16 0-1.5-.74-2.9-1.6-8.9-5.4-17-6-21-1.5-2.3 2.7-2.4 7-.43 9.9 4.1 5.9 14 5.3 22-1.2l2.4-2 3.8 2.6 3.8 2.6-1.1.9c-2.1 1.7-9.1 5.7-13 7.2-5.6 2.5-9.9 3.5-15 3.7-5.6.27-8.1-.2-12-2.1-8-4-11-13-6-22 .82-1.6 2.3-3.7 3.5-4.9 2-2 2.1-2.1 3.8-1.8 1.4.23 1.8.16 2.5-.55 1.5-1.5.82-3.2-1.2-3.2-3.4 0-8.1 4.2-11 9.6-2 4.2-2.7 7.3-2.5 11 .24 4.2 1.5 6.8 5.4 11 5 5 11 7.1 19 7.1 6.8 0 13-1.6 21-5.4 2.4-1.2 5.9-3.2 7.9-4.5 2-1.3 3.8-2.4 4-2.4.2 0 1.2.59 2.2 1.3 1.1.74 3.6 2.4 5.7 3.7 3.8 2.4 3.8 2.4 4.8 1.7 1.2-.78 1.8-.27-5.6-5.1l-5.2-3.3.86-.7c2.5-1.9 10-6.5 14-8.6 8.2-4.2 14-5.7 20-5.4 4.1.2 6.4 1.1 8.6 3.3 2.5 2.5 3 4 3 8.5 0 3.6-.12 4.1-1.2 6.6-2.2 4.7-6.4 8-12 9.3-2.8.66-8.5.31-12-.82-2.7-.82-2.8-.82-3.9-.16l-1 .7.97.51c.55.27 2.4.9 4.1 1.4 4.6 1.3 10 1.2 14-.23 5.6-1.9 9.9-5.5 12-9.9 1.4-3.2 1.7-8.2.47-12-2.6-7.7-9.7-12-19-12-8.2 0-16 3.4-29 12l-5 3.5-2.6-1.8c-1.4-1-3.2-2.3-4-2.9l-1.4-1 1.8-2.7c2.6-3.8 3.6-7.2 3.9-12 .31-7.5-1.9-13-7.4-18-2.8-2.9-3.9-3.7-7-5.2-5-2.4-8-3.1-14-3.1-6.8.039-14 1.9-18 5.2-.98.66-1.9 1.1-2.1.98-.2-.079-.35-.96-.59-1.4-1.2-2.2-1.6-5.8-4-6.3-4.2-.78-10 7.4-10 7.4-.19 0-6.3-8.3-10-7.4zm1.5 18c2.8 4.1 4.4 7.7 4.6 10 .19 2.8-.24 3.6-1.9 3.6-.78 0-1.5-.47-2.5-1.6-3-3.3-4.6-8.2-4.6-14l.04-3.7 1.4 1.6c.78.86 2.1 2.6 2.9 3.8zm22 4.3c-1.3 5.2-4.3 9.6-6.4 9.6-.58 0-1.2-.2-1.5-.47-.67-.66-.59-4.3.16-6.2.97-2.5 4-7.4 6.2-10l2-2.4.12 3.6c.07 2.4-.12 4.5-.51 6.1zm-48 16c1.3.66 2.2 1.9 2.7 3.7 1.1 4-3 7.8-8.5 7.8-2.2 0-6.1-1.3-8.5-2.8-2-1.2-4.5-3.4-4.5-3.9 0-.39 5.6-3.5 7.8-4.3 4.1-1.6 8.6-1.8 11-.51zm78-.43c2.8.51 8.7 3 11 4.7.74.59.74.59-.2 1.6-2.5 2.8-8.7 5.6-12 5.6-5.5 0-9.6-3.8-8.5-7.8.74-2.6 2-3.7 4.5-4.4 1.8-.43 2.2-.39 5.5.23z" style="stroke-width:.1"/>
+  <path d="m134 60c-.24.59-.4 1.8-.32 2.8l.12 1.7 4.8 1.6c6.8 2.2 17 7.7 31 16 14 8.4 16 9.5 21 12 14 6.9 26 7.5 35 1.6 5.2-3.3 8.9-8.7 9.8-14 .16-.94.04-1.7-.31-2.1-.94-1.2-2-.31-2.2 2-.43 3.4-3.4 8.1-6.5 10-4.1 3-9.3 4.1-16 3.4-9.2-.98-17-4.5-33-14-22-14-29-18-38-20-5-1.7-5.4-1.7-5.8-.47z" style="stroke-width:.1"/>
+  <path d="m363 59c-8.6 2.5-19 7.8-35 19-21 13-30 17-41 17-4.1 0-5.1-.12-7.5-.98-1.6-.55-3.7-1.6-4.8-2.4-3.3-2.4-6.2-7.1-6.6-11-.27-2.3-1.3-3.2-2.2-2-1.5 2.1 1.6 9.5 5.8 14 8.9 8.7 23 9.2 39 1.3 5.4-2.7 7.3-3.9 21-12 13-8.2 24-14 31-16l4.8-1.6.11-1.7c.12-2-.47-3.8-1.2-3.8-.27 0-1.6.35-2.8.7z" style="stroke-width:.1"/>
+  </g>
+  <use transform="rotate(90,250,250)" xlink:href="#flourish"/>
+  <use transform="rotate(180,250,250)" xlink:href="#flourish"/>
+  <use transform="rotate(270,250,250)" xlink:href="#flourish"/>
+</svg>     
+  {{#if properties~}}
+    <div id="properties" class="properties">
+    {{#each properties~}}
+      <div class="property-container property-{{~slugify this.displayName}} {{#if this.gmOnly}}gm-only{{/if}}">
+        <div class="property-label">
+          {{~#if this.shortName}}
+            {{~this.shortName~}}
+          {{~else}}
+            {{~this.displayName~}}
+          {{~/if}}
+        </div>
+        <div class="property-value-container">
+        <div class="property-value">
+          {{~this.value~}}
+        </div>
+        </div>
+      </div>
+    {{~/each}}
+  </div>
+  {{~/if}}
+</div>
+</body>
+</html>

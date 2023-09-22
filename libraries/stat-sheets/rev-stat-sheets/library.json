@@ -1,0 +1,16 @@
+{
+  "name": "Reverend's Stat-sheets",
+  "version": "1.3",
+  "website": "www.rptools.net",
+  "gitUrl": "https://github.com/RPTools/maptool-builtin-addons/tree/main/libraries/stat-sheets/rev-stat-sheets",
+  "authors": [
+      "Reverend"
+  ],
+  "license": "AGPL",
+  "namespace": "rev.rptools.statsheets",
+  "description": "A variety of stat-sheets to demonstrate capabilities.",
+  "shortDescription": "Stat-sheets",
+  "allowsUriAccess": true,
+  "readMeFile": "README.md",
+  "licenseFile": "license.txt"
+}

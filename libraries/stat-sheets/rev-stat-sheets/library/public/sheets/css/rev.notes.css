@@ -1,0 +1,122 @@
+:root {
+	--gradientbg: linear-gradient(to bottom,
+  		var(--mt-theme-color-button-start-background),
+  		var(--mt-theme-color-button-pressed-background));
+  --boxshadow: 
+  		inset 0 0 var(--unit) var(--mt-theme-color-background),
+  	 	0 0 var(--unit2) rgba(0, 0, 0, 1.00); 
+	--boxshadow-2: 
+  		inset var(--unit) var(--unit) var(--unit2) var(--mt-theme-color-background),
+  	 	inset var(--unit-1) var(--unit-1) var(--unit2) rgba(0, 0, 0, 0.42),
+  	 	0 0 var(--unit2) rgba(0, 0, 0, 1.00);  
+}
+#statsheet  { 
+	background: var(--mt-theme-panel-background) ;  
+	color: var(--mt-theme-panel-foreground); 
+	box-shadow: var(--boxshadow-2), var(--boxshadow);
+  display: flex;
+  flex-direction: row;
+  gap: var(--unit6); 
+  max-height: calc(1.2 * var(--max-height));
+  max-width: calc(1.2 * var(--max-width));
+  padding: var(--unit4);
+}
+.statSheet-topLeft     { border-radius: 0 0 var(--unit4) 0; }
+.statSheet-topRight    { border-radius: 0 0 0 var(--unit4); }
+.statSheet-bottomLeft  { border-radius: 0 var(--unit4) 0 0; }
+.statSheet-bottomRight { border-radius: var(--unit4) 0 0 0; }
+.statSheet-top         { border-radius: 0 0 var(--unit4) var(--unit4); }
+.statSheet-bottom      { border-radius: var(--unit4) var(--unit4) 0 0; }
+.statSheet-left        { border-radius: 0 var(--unit4) var(--unit4) 0; }
+.statSheet-right       { border-radius: var(--unit4) 0 0 var(--unit4); }
+
+#statsheet.statSheet-topRight    ,
+#statsheet.statSheet-bottomRight ,
+#statsheet.statSheet-right        { flex-direction: row-reverse;}
+.statsheet-content > div {min-height: 0; min-width: 0; }
+.first-pane {
+  display: inline-flex;
+  flex: 0 0 calc(var(--portrait-width) + 2 * var(--unit10));
+	flex-direction: column;
+	flex-wrap: nowrap;
+	gap: var(--unit);
+}
+
+.portrait-container {
+	background-color: white;
+	border: 1px solid #888;
+	box-sizing: content-box;
+	box-shadow: 0 0 3px 2px rgba(0,0,0,0),
+		var(--boxshadow),
+		inset var(--unit) var(--unit) var(--unit) 1px #fff,
+		inset var(--unit-1) var(--unit-1) var(--unit) 1px rgba(0,0,0,0.14);
+	padding: var(--unit5) var(--unit5) var(--unit8) var(--unit5);
+	height: min-content;
+	width: min-content;
+}
+.portrait { 
+	background-image: var(--gradientbg);
+  	box-shadow: var(--boxshadow-2);
+  	border: 1px solid rgba(0,0,0,0.3);
+    box-sizing: content-box;
+  	box-shadow: 0 0 3px 2px rgba(0,0,0,0.2);
+  	height: calc(var(--portrait-height) + var(--unit4));
+  	padding: var(--unit2);
+  	width: calc(var(--portrait-width) + var(--unit4));
+}
+.token-names-container {
+	border-collapse: collapse;
+	width: 100%;
+}
+.token-names-container > div {	
+	display: table-row;	 
+	height: var(--unit12);
+	width: inherit;
+}
+.name-container-label {
+	font-size: 60%;
+	text-align: right;
+	vertical-align: middle;
+	display: table-cell;
+}
+.name-container-value {
+	display: table-cell;
+	padding-left: var(--unit2);
+	vertical-align: middle;
+  	font-weight: bold;
+  	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	max-width: calc(var(--portrait-width) + var(--unit6));
+	width: 100%;
+}
+.notes-pane {  
+	height: 100%;
+	max-width: 25vw;
+	padding: var(--unit4);
+	position: relative;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: round(to-zero, calc(var(--max-height) / var(--unit6)), 1);	
+}
+.statSheet-bottom .notes-pane, .statSheet-bottomLeft .notes-pane, 
+.statSheet-left .notes-pane, .statSheet-topLeft .notes-pane,
+.statSheet-top .notes-pane {
+   border-left: 1px solid var(--mt-theme-color-actions-grey-inline);
+}
+.statSheet-bottomRight .notes-pane, .statSheet-right .notes-pane,
+.statSheet-topRight .notes-pane {
+  border-right: 1px solid var(--mt-theme-color-actions-grey-inline);
+}
+
+.notes-pane *:not(.notes-label) { font-size-adjust: 0.6; }
+.notes-label { 
+	font-size: 70%;
+	color: var(--mt-theme-color-actions-grey-inline-dark);
+	padding: var(--unit2);
+	float: left;
+	text-decoration: underline overline;
+	text-underline-offset: var(--unit);
+  white-space: nowrap;
+}
+.gm-name-container .name-container-value, .notes-gm .notes-label { color: var(--mt-theme-color-objects-red-status);  }

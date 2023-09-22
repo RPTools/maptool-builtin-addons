@@ -1,0 +1,34 @@
+:root {
+  --max-height: 60vh;
+  --max-width:  60vw;
+  --unit: calc( min(var(--mt-theme-font-size), 12px, 5vmin) / 5);
+  --unit-1: calc(var(--unit) * -1);
+  --unit2: calc(var(--unit) * 2);
+  --unit-2: calc(var(--unit) * -2);
+  --unit3: calc(var(--unit) * 3);
+  --unit-3: calc(var(--unit) * -3);
+  --unit4: calc(var(--unit) * 4);
+  --unit-4: calc(var(--unit) * -4);
+  --unit5: calc(var(--unit) * 5);
+  --unit-5: calc(var(--unit) * -5);
+  --unit6: calc(var(--unit) * 6);
+  --unit-6: calc(var(--unit) * -6);
+  --unit7: calc(var(--unit) * 7);
+  --unit-7: calc(var(--unit) * -7);
+  --unit8: calc(var(--unit) * 8);
+  --unit-8: calc(var(--unit) * -8);
+  --unit9: calc(var(--unit) * 9);
+  --unit-9: calc(var(--unit) * -9);
+  --unit10: calc(var(--unit) * 10);
+  --unit-10: calc(var(--unit) * -10);
+  --unit12: calc(var(--unit) * 12);
+  --unit-12: calc(var(--unit) * -12);
+  --unit15: calc(var(--unit) * 15);
+  --unit-15: calc(var(--unit) * -15);
+}
+*, *:before, *:after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+#statSheet.player .gm-only { display:none; }
