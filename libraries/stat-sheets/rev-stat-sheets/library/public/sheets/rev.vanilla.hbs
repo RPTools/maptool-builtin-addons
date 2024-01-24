@@ -25,7 +25,7 @@
     />
   </div>
   <div id="token-names" class="token-names">
-    <div id="name" class="name">{{name}}</div>
+    <div id="name" class="name">{{{name}}}</div>
     {{~#if gmName}}
     <div id="name-gm" class="name-gm gm-only">{{gmName}}</div>
     {{~/if}}
@@ -45,7 +45,7 @@
               </div>
               <div class="property-value-container">
               <div class="property-value">
-                {{~this.value~}}
+                  {{{~this.value~}}}
               </div>
               </div>
             </div>
