@@ -17,7 +17,7 @@
 </head>
 <body>
 <div id="statsheet" class="{{statSheetLocation}} statsheet {{#if gm}}gm{{else}}player{{/if}} {{tokenType}}">
-  <div class="token-name" id="token-name">{{name}}</div>
+  <div class="token-name" id="token-name">{{{name}}}</div>
     <svg id="portrait-frame" class="portrait-frame" 
         viewBox="0 0 500 500" preserveAspectRatio="xMidYMid" 
         xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" >
@@ -87,7 +87,7 @@
         </div>
         <div class="property-value-container">
         <div class="property-value">
-          {{~this.value~}}
+            {{{~this.value~}}}
         </div>
         </div>
       </div>

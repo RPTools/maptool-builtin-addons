@@ -31,7 +31,7 @@
       />
     </div> 
     <div id="name-container" class="name-container">
-      <div id="token-name" class="token-name">{{name}}</div>
+      <div id="token-name" class="token-name">{{{name}}}</div>
     </div>  
     <div id="token-type" class="token-type">{{tokenType}}</div>
     {{#if properties~}}
@@ -48,7 +48,7 @@
           </div>
           <div class="property-value-container">
           <div class="property-value">
-            {{~this.value~}}
+              {{{~this.value~}}}
           </div>
           </div>
         </div>

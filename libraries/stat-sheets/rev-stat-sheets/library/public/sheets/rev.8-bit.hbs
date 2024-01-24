@@ -44,7 +44,7 @@
         <rect x="0" y="0" height="100%" width="100%" stroke="none" fill="url(#pattern)">
       </svg>      
     </div>
-    <div id="token-name" class="token-name">{{name}}</div>
+    <div id="token-name" class="token-name">{{{name}}}</div>
     <div id="token-type" class="token-type">{{tokenType}}</div>
   </div>
   {{#if properties~}}
@@ -61,7 +61,7 @@
         </div>
         <div class="property-value-container">
         <div class="property-value">
-          {{~this.value~}}
+            {{{~this.value~}}}
         </div>
         </div>
       </div>
