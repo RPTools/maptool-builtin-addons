@@ -4,6 +4,10 @@
         "name": "Simple",
         "description": "Simple Stat Sheet",
         "entry": "sheets/stats/simple/index.hbs" 
+    },{
+      "name": "Empty",
+      "description": "None",
+      "entry": "sheets/stats/empty/empty.hbs"
     }
   ]
 }
