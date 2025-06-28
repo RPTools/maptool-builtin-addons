@@ -1,13 +1,13 @@
 {
   "statSheets": [
     {
-      "name": "Simple",
-      "description": "Simple Stat Sheet",
+      "name": "シンプル",
+      "description": "簡素なデータシート",
       "entry": "sheets/stats/simple/index.hbs"
     },
     {
-      "name": "Empty",
-      "description": "None",
+      "name": "（空）",
+      "description": "なし",
       "entry": "sheets/stats/empty/empty.hbs"
     }
   ]
