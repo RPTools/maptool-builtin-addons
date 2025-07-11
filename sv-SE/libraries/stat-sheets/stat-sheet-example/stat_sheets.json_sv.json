@@ -1,13 +1,13 @@
 {
   "statSheets": [
     {
-      "name": "Simple",
+      "name": "Enkel",
       "description": "Simple Stat Sheet",
       "entry": "sheets/stats/simple/index.hbs"
     },
     {
-      "name": "Empty",
-      "description": "None",
+      "name": "Tom",
+      "description": "Ingen",
       "entry": "sheets/stats/empty/empty.hbs"
     }
   ]
