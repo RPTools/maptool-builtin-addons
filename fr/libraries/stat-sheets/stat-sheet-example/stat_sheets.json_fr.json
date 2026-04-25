@@ -2,12 +2,12 @@
   "statSheets": [
     {
       "name": "Simple",
-      "description": "Simple Stat Sheet",
+      "description": "Feuille de stats simplifiée",
       "entry": "sheets/stats/simple/index.hbs"
     },
     {
-      "name": "Empty",
-      "description": "None",
+      "name": "Vide",
+      "description": "Aucun",
       "entry": "sheets/stats/empty/empty.hbs"
     }
   ]
