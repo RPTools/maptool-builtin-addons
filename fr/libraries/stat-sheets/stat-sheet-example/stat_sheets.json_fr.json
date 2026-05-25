@@ -1,0 +1,14 @@
+{
+  "statSheets": [
+    {
+      "name": "Simple",
+      "description": "Feuille de stats simplifiée",
+      "entry": "sheets/stats/simple/index.hbs"
+    },
+    {
+      "name": "Vide",
+      "description": "Aucun",
+      "entry": "sheets/stats/empty/empty.hbs"
+    }
+  ]
+}
