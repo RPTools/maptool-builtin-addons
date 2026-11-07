@@ -1,0 +1,14 @@
+{
+  "statSheets": [
+    {
+      "name": "Einfach",
+      "description": "Einfaches Stats-Blatt",
+      "entry": "sheets/stats/simple/index.hbs"
+    },
+    {
+      "name": "",
+      "description": "Keine",
+      "entry": "sheets/stats/simple/empty.hbs"
+    }
+  ]
+}

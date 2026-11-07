@@ -1,0 +1,14 @@
+{
+  "statSheets": [
+    {
+      "name": "Простой",
+      "description": "Простой блок параметров",
+      "entry": "sheets/stats/simple/index.hbs"
+    },
+    {
+      "name": "Пустой",
+      "description": "Нет",
+      "entry": "sheets/stats/empty/empty.hbs"
+    }
+  ]
+}
